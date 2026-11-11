@@ -1,22 +1,475 @@
 ---
 ---
 
+// Dark theme tokens — set before importing minima so !default values are skipped.
+$base-font-family: "Segoe UI", "Helvetica Neue", ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+$base-font-size: 17px;
+$base-font-weight: 400;
+$small-font-size: 15px;
+$base-line-height: 1.7;
+
+$spacing-unit: 30px;
+
+$text-color: #e8eaef;
+$background-color: #0f1218;
+$brand-color: #5eead4;
+
+$grey-color: #9aa3b2;
+$grey-color-light: #2a3140;
+$grey-color-dark: #c5cad3;
+
+$content-width: 800px;
+
 @import "minima";
 
+:root {
+  --bg: #0f1218;
+  --bg-elevated: #171b24;
+  --bg-card: #1a1f2b;
+  --bg-code: #0b0d12;
+  --border: #2a3140;
+  --text: #e8eaef;
+  --text-muted: #9aa3b2;
+  --accent: #5eead4;
+  --accent-hover: #99f6e4;
+  --link: #7dd3fc;
+  --link-hover: #bae6fd;
+}
+
+html {
+  color-scheme: dark;
+  background-color: var(--bg);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(94, 234, 212, 0.28);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+a:focus-visible,
+.site-nav .page-link:focus-visible,
+.post-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.wrapper {
+  max-width: $content-width;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+}
+
+/**
+ * Header
+ */
+.site-header {
+  background: var(--bg-elevated);
+  border-top: 3px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+  min-height: 58px;
+}
+
+.site-title,
+.site-title:visited {
+  color: var(--text);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.site-title:hover,
+.site-title:focus {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-nav .page-link {
+  color: var(--text-muted);
+}
+
+.site-nav .page-link:hover,
+.site-nav .page-link:focus {
+  color: var(--accent);
+}
+
+@media screen and (max-width: $on-palm) {
+  .site-nav {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .site-nav .menu-icon > svg path {
+    fill: var(--text);
+  }
+
+  .site-nav label[for="nav-trigger"] {
+    cursor: pointer;
+  }
+
+  .site-nav input ~ .trigger {
+    background-color: var(--bg-elevated);
+    border-radius: 8px;
+  }
+
+  .site-nav .page-link {
+    color: var(--text);
+    padding: 0.35rem 0;
+  }
+}
+
+/**
+ * Footer
+ */
+.site-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.footer-heading,
+.site-footer p,
+.site-footer .contact-list,
+.site-footer .footer-col {
+  color: var(--text-muted);
+}
+
+.site-footer a {
+  color: var(--link);
+}
+
+.social-media-list a:hover,
+.social-media-list a:focus {
+  text-decoration: none;
+}
+
+.social-media-list span.username {
+  color: var(--text-muted);
+}
+
+.svg-icon {
+  fill: var(--text-muted);
+}
+
+/**
+ * Code
+ */
+pre,
+code,
+.highlight {
+  background-color: var(--bg-code);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+code {
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+pre {
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+pre code,
+.highlight pre,
+.highlight code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.highlight {
+  background-color: var(--bg-code);
+}
+
+.highlighter-rouge .highlight {
+  background-color: var(--bg-code);
+}
+
+/**
+ * Post typography
+ */
+.post-header,
+.page-heading,
+.post-title,
+.page-title {
+  color: var(--text);
+}
+
+.post-title,
+.page-title {
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.post-meta {
+  color: var(--text-muted);
+}
+
+.post-meta .checked {
+  color: var(--text-muted);
+}
+
 .post-content h2 {
-  margin-top: 2.2rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid #e8e8e8;
+  margin-top: 2.4rem;
+  padding: 0.1rem 0 0.45rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.post-content h2.section-exploited {
+  border-left-color: #f472b6;
+  color: #fda4af;
+}
+
+.post-content h2.section-dotnet {
+  border-left-color: #5eead4;
+  color: #99f6e4;
+}
+
+.post-content h2.section-devops {
+  border-left-color: #60a5fa;
+  color: #93c5fd;
+}
+
+.post-content h2.section-industry {
+  border-left-color: #94a3b8;
+  color: #cbd5e1;
 }
 
 .post-content h3 {
-  margin-top: 1.75rem;
+  margin-top: 1.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--text);
 }
 
 .post-content h3 code {
   font-size: 0.9em;
 }
 
-.post-meta .checked {
-  color: #828282;
+.post-content h3 + p:has(.sev),
+.post-content h3 + p:has(.badge) {
+  margin-top: 0.15rem;
+  margin-bottom: 0.95rem;
+}
+
+.post-content blockquote {
+  color: var(--text-muted);
+  border-left: 4px solid var(--accent);
+  background: var(--bg-elevated);
+  padding: 0.6rem 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.post-content table {
+  border-color: var(--border);
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--border);
+}
+
+.post-content th {
+  background: var(--bg-elevated);
+}
+
+.post-content hr {
+  border-color: var(--border);
+  background: var(--border);
+}
+
+/**
+ * Severity pills and exploited badge
+ *
+ * Daily routine markup (place on the line after each item heading):
+ *   <span class="sev sev-critical">Critical · CVSS 9.8</span>
+ *   <span class="badge exploited">Exploited</span>
+ *
+ * Severity classes: sev-critical, sev-high, sev-medium, sev-moderate, sev-low
+ */
+.sev,
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.25;
+  padding: 0.22em 0.65em;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 0 0.35rem 0.28rem 0;
+}
+
+.sev-critical {
+  background: #7f1d1d;
+  color: #fecaca;
+  border-color: #ef4444;
+}
+
+.sev-high {
+  background: #7c2d12;
+  color: #fed7aa;
+  border-color: #f97316;
+}
+
+.sev-medium,
+.sev-moderate {
+  background: #713f12;
+  color: #fde68a;
+  border-color: #f59e0b;
+}
+
+.sev-low {
+  background: #1e3a5f;
+  color: #bfdbfe;
+  border-color: #60a5fa;
+}
+
+.badge.exploited {
+  background: #9d174d;
+  color: #ffffff;
+  border-color: #f472b6;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  box-shadow: 0 0 10px rgba(244, 114, 182, 0.28);
+}
+
+.sev-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.15rem;
+  padding: 0.85rem 1rem 0.55rem;
+  margin: 0 0 1.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.sev-summary .sev,
+.sev-summary .badge {
+  margin-bottom: 0.3rem;
+}
+
+/**
+ * Home page
+ */
+.home > p:first-of-type {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.8rem;
+}
+
+.page-heading {
+  display: none;
+}
+
+.post-list-heading {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  border: 0;
+  padding: 0;
+}
+
+.post-list {
+  margin-left: 0;
+}
+
+.post-list > li {
+  list-style: none;
+  margin-bottom: 1rem;
+  border-bottom: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem 1.2rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-list > li:hover,
+.post-list > li:focus-within {
+  border-color: rgba(94, 234, 212, 0.55);
+  box-shadow: 0 0 0 1px rgba(94, 234, 212, 0.18);
+}
+
+.post-list .post-meta {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.post-list .post-link,
+.post-list h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.015em;
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+.post-list .post-link:hover,
+.post-list .post-link:focus {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.rss-subscribe {
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+/**
+ * Mobile
+ */
+@media screen and (max-width: $on-palm) {
+  body {
+    font-size: 16px;
+  }
+
+  .wrapper {
+    padding-right: $spacing-unit * 0.6;
+    padding-left: $spacing-unit * 0.6;
+  }
+
+  .post-title,
+  .page-title {
+    font-size: 1.7rem;
+  }
+
+  .sev,
+  .badge {
+    font-size: 0.7rem;
+  }
 }

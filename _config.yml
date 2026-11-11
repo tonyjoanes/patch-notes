@@ -23,5 +23,8 @@ github_username: tonyjoanes
 
 exclude:
   - Gemfile
+  - Gemfile.lock
   - README.md
   - .gitignore
+  - vendor
+  - .bundle
