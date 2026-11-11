@@ -1,0 +1,27 @@
+title: Patch Notes
+author: Tony Joanes
+description: >-
+  A weekday digest of actively exploited and notable vulnerabilities
+  for .NET, Azure, container and DevOps teams.
+url: "https://tonyjoanes.github.io"
+baseurl: "/patch-notes"
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+header_pages:
+  - about.md
+
+minima:
+  date_format: "%-d %B %Y"
+
+timezone: Europe/London
+
+github_username: tonyjoanes
+
+exclude:
+  - Gemfile
+  - README.md
+  - .gitignore

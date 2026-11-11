@@ -1,0 +1,22 @@
+---
+---
+
+@import "minima";
+
+.post-content h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.post-content h3 {
+  margin-top: 1.75rem;
+}
+
+.post-content h3 code {
+  font-size: 0.9em;
+}
+
+.post-meta .checked {
+  color: #828282;
+}
