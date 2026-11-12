@@ -46,8 +46,14 @@ Section heading colours (optional, immediately after the heading):
 ## .NET & Azure
 {: .section-dotnet}
 
+## Malicious packages
+{: .section-malicious}
+
 ## DevOps & CI
 {: .section-devops}
+
+## Containers & Linux
+{: .section-containers}
 
 ## Wider industry
 {: .section-industry}
